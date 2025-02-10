@@ -1,8 +1,8 @@
 <section class="product">
-    <h1>{{product?.title}}</h1>
-    <div>
+    <h1 *ngIf="product?.title">{{product?.title}}</h1>
+    <div [ngClass]="{'has-load' : hasLoaded}" style="display: none;">
         <div class="left">
-            <img [src]="product?.image" [alt]="product?.title">
+            <img [src]="product?.image" [alt]="product?.title" (load)="imageLoaded()">         
         </div>
         <div class="right">
             <p>{{product?.description}}</p>

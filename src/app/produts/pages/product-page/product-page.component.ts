@@ -14,6 +14,7 @@ import { Product } from '../../interfaces/product.interace';
 export class ProductPageComponent implements OnInit {
 
     public product?:Product;
+    public hasLoaded?:boolean;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -22,6 +23,7 @@ export class ProductPageComponent implements OnInit {
     ) { }
 
     ngOnInit() { 
+        this.hasLoaded = false
         this.activatedRoute.params
         .pipe(
             switchMap(({id})=> this.productsService.getProductById(id))
@@ -30,8 +32,11 @@ export class ProductPageComponent implements OnInit {
             if(!response) return this.router.navigateByUrl('products')
             this.product = response;
             return 
-        })
-            
-            
+        })         
+    }
+
+    imageLoaded(){
+        this.hasLoaded = true;
+        console.log({'hasloaded': this.hasLoaded})
     }
 }
