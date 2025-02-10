@@ -8,6 +8,7 @@ import { ShoppingCartButtonComponent } from './components/shopping-cart-button/s
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ShoppingCart } from './components/shopping-cart/shopping-cart.component';
 
 
 
@@ -18,7 +19,8 @@ import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to
     ProductListComponent,
     ProductCardComponent,
     ShoppingCartButtonComponent,
-    AddToCartButtonComponent
+    AddToCartButtonComponent,
+    ShoppingCart,
   ],
   imports: [
     CommonModule,

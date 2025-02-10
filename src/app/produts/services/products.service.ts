@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Category, Product } from '../interfaces/product.interace';
-import { Observable, tap } from 'rxjs';
+import { count, Observable, tap } from 'rxjs';
 import { CacheStores } from '../interfaces/cache-store.interface';
 
 @Injectable({providedIn: 'root'})
-export class ProductsService {
+export class ProductsService{
 
     private apiUrl:string = 'https://fakestoreapi.com/products';
     public cart:Product[] = [];
@@ -19,7 +19,6 @@ export class ProductsService {
     constructor(private http: HttpClient) { 
         this.loadLocalStorage();
     }
-
     
     getAllProducts(): Observable<Product[]> {
         return this.http.get<Product[]>(this.apiUrl).pipe(
@@ -47,6 +46,27 @@ export class ProductsService {
 
     removeToShoppingCart(product:Product){
          this.cart = this.cart.filter(({id}) => id != product.id);
+    }
+
+    get cartObject(){
+        return this.cart.reduce((acc, product) => {
+            const { id, title, price, category, description, image } = product;
+          
+            if (!acc[id]) {
+              acc[id] = {
+                count: 0,
+                title,
+                price,
+                category,
+                description,
+                image,
+              };
+            }
+          
+            acc[id].count += 1;
+          
+            return acc;
+          }, {} as Record<number, { count: number; title: string; price: number; category: string; description: string; image: string }>);
     }
     
     private saveLocalStorage(){

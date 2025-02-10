@@ -10,10 +10,22 @@ import { ProductsService } from '../../services/products.service';
 })
 
 export class ShoppingCartButtonComponent  {
+    public isOpen:boolean = false;
     constructor(private productsService:ProductsService) {}
 
     get cart():Product[]{
         return this.productsService.cart
     }
+
+    openModal(){
+        this.isOpen = true;
+    }
+ 
+    openModalToFalse(open:boolean){
+        this.isOpen = open,
+        console.log(this.productsService.cartObject)
+    }
+
+
 
 }

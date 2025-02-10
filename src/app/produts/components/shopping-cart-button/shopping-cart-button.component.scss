@@ -11,6 +11,8 @@
     border-radius: 50%;
     background-color: rgba($color: $deco1-color, $alpha: .5);
     transition: background-color .15s ease-in-out;
+    outline: none;
+    border: 0;
 
     &:hover{
         background-color: $acent-color;
