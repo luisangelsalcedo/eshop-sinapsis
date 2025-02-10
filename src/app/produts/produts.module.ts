@@ -5,15 +5,17 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShoppingCartButtonComponent } from './components/shopping-cart-button/shopping-cart-button.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 
 
 @NgModule({
   declarations: [
     ProductsPageComponent,
+    ProductPageComponent,
     ProductListComponent,
     ProductCardComponent,
-    ShoppingCartButtonComponent
+    ShoppingCartButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ShoppingCartButtonComponent } from './components/shopping-cart-button/s
 ],
   exports: [
     ProductsPageComponent,
-    ShoppingCartButtonComponent
+    ShoppingCartButtonComponent,
+    ProductPageComponent
   ]
 })
 export class ProdutsModule { }
