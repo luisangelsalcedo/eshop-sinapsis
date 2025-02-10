@@ -15,6 +15,7 @@ export class ProductsPageComponent implements OnInit {
     
     ngOnInit(): void {
         this.getCategories()
+        this.categories = this.productsService.cacheStore.categories;
     }
 
     getCategories():void{

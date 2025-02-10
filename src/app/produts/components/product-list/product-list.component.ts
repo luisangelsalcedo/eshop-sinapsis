@@ -11,18 +11,20 @@ import { map, } from 'rxjs';
 })
 
 export class ProductListComponent implements OnInit {
+    
 
     @Input()
     public category?:Category;
     public productByCategory: Product[] = [];
-    constructor(private productService:ProductsService) {}
+    constructor(private productsService:ProductsService) {}
 
     ngOnInit(): void {
         this.getProductByCategory();
+        this.productByCategory = this.productsService.cacheStore.products;
     }
 
     getProductByCategory():void {
-        this.productService.getAllProducts()
+        this.productsService.getAllProducts()
         .pipe(
             map(products => products.filter(product => product.category === this.category))
         )
