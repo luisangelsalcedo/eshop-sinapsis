@@ -83,3 +83,11 @@ header{
 .title{
     margin: 2em 0 1em 0;
 }
+footer{
+    background-color: $primary-color;
+    padding: 2em 0;
+    text-align: center;
+    color: rgba($color: $base-color, $alpha: .7);
+    font-size: .9em;
+    
+}
