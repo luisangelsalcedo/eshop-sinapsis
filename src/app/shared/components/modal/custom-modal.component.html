@@ -1,0 +1,6 @@
+<dialog id="popup" [open]="isOpen" class="modal">
+  <form method="dialog">
+    <button type="submit" class="btn" (click)="closeModal()">X</button>
+  </form>
+  <ng-content></ng-content>
+</dialog>
