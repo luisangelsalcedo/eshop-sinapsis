@@ -1,0 +1,6 @@
+<article *ngFor="let product of productByCategory">
+    <img [src]="product.image" alt="" width="50">
+    <p>{{product.title}}</p>
+    <p>{{product.price}}</p>
+    <button>Agregar al carrito</button>
+</article>

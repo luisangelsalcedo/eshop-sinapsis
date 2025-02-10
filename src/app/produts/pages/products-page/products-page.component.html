@@ -1,8 +1,16 @@
 <div class="page">
-    <article *ngFor="let product of products">
+    <!-- <article *ngFor="let product of products">
         <img [src]="product.image" alt="" width="50">
         <p>{{product.title}}</p>
         <p>{{product.price}}</p>
         <button>Agregar al carrito</button>
-    </article>
+    </article> -->
+
+    <section *ngFor="let category of categories">
+        <h2>{{category | titlecase}}</h2>
+        <div>
+            <product-list [category]="category" />
+        </div>
+        <hr />
+    </section>
 </div>
