@@ -1,0 +1,31 @@
+.product{
+    img{
+        width: 15em;
+        height: auto;
+        margin: 1em auto;
+        display: block;
+        mix-blend-mode: multiply;
+    }
+    h1{
+        margin-bottom: 2em;
+
+        & + div{
+            padding-bottom: 2em;
+
+            @media (min-width:800px) {
+                display: flex;
+            }
+
+            .left{
+                flex: 1;
+            }
+            .right{
+                flex: 1;
+            }
+        }
+    }
+    .price{
+        text-wrap: balance;
+        padding: 1em 0;
+    }
+}

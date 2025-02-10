@@ -1,1 +1,13 @@
-{{product?.title}}
+<section class="product">
+    <h1>{{product?.title}}</h1>
+    <div>
+        <div class="left">
+            <img [src]="product?.image" [alt]="product?.title">
+        </div>
+        <div class="right">
+            <p>{{product?.description}}</p>
+            <p class="price">${{product?.price}}</p>
+            <add-to-cart-button [product]="product"/>
+        </div>
+    </div>
+</section>
