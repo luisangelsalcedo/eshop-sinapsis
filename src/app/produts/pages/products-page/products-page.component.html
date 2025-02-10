@@ -7,10 +7,9 @@
     </article> -->
 
     <section *ngFor="let category of categories">
-        <h2>{{category | titlecase}}</h2>
+        <h2 class="title">{{category | titlecase}}</h2>
         <div>
             <product-list [category]="category" />
         </div>
-        <hr />
     </section>
 </div>

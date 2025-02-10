@@ -1,4 +1,16 @@
 .product-list{
+    position: relative;
     display: flex;
     align-items: stretch;
+    // width: calc(100vw - 2em);
+    overflow: scroll;
+    scroll-snap-stop: always;
+    scroll-snap-type: x mandatory;
+    padding-bottom: .5em;
+
+    @media (min-width:800px) {
+        overflow: visible;
+        flex-wrap: wrap;
+    }
+    
 }

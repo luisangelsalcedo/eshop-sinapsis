@@ -15,6 +15,12 @@
     }
 }
 
+body{
+    @media (min-width:800px) {
+        background-color: $secondary-color;
+    }
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family: $secondary-font;
     font-weight: 100;
@@ -46,4 +52,34 @@ h1,h2,h3,h4,h5,h6{
     &:active{
         background-color: $primary-color !important;
     }
+}
+#container{
+    margin: 0 1em;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    @media (min-width:500px) {
+        margin: 0 auto;
+        padding: 2em;
+    }
+    @media (min-width:650px) {
+        margin: 4em auto;
+        padding: 2em;
+    }
+    @media (min-width:800px) {
+        background-color: $base-color;
+        max-width: 1000px;
+        border-radius: 2em;
+    }
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0;
+   
+}
+.title{
+    margin: 2em 0 1em 0;
 }
