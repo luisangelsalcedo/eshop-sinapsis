@@ -16,8 +16,12 @@
 }
 
 body{
-    @media (min-width:800px) {
-        background-color: $secondary-color;
+    background-color: $primary-color;
+    .bg{
+        overflow: hidden;
+        @media (min-width:800px) {
+            background-color: $secondary-color;
+        }
     }
 }
 
@@ -85,10 +89,9 @@ header{
     color: $secondary-color
 }
 footer{
-    background-color: $primary-color;
     padding: 2em 0;
     text-align: center;
-    color: rgba($color: $base-color, $alpha: .7);
+    color: rgba($color: $base-color, $alpha: .9);
     font-size: .9em;
     
 }
