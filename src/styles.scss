@@ -20,3 +20,30 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 100;
     color: $primary-color;
 }
+
+.btn{
+    outline: none;
+    background-color: transparent;
+    border: solid .1em $primary-color;
+    padding: .8em 1.5em;
+    color: $primary-color;
+    font-size: .8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: background-color .1s ease-in-out;
+
+    &-block{
+        width: 100%;
+        display: block;
+        margin-top: .5em;
+    }
+
+    &:hover, &-primary{
+        background-color: $acent-color;
+        color: $base-color;
+    }
+    &:active{
+        background-color: $primary-color !important;
+    }
+}
