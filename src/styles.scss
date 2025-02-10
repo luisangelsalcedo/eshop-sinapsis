@@ -6,10 +6,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: $primary-font;
 }
 :root{
     font-size: 16px;
-    font-family: $primary-font;
     @media (min-width: 1300px) {
         font-size: calc(16px + 0.2vw)
     }
@@ -42,9 +42,11 @@ h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
     letter-spacing: .1em;
     transition: background-color .1s ease-in-out;
+    position: relative;
+    z-index: 10;
 
     &-block{
-        width: 100%;
+        width: 100% !important;
         display: block;
         margin-top: .5em;
     }
@@ -62,6 +64,8 @@ h1,h2,h3,h4,h5,h6{
     overflow: hidden;
     position: relative;
     max-width: 800px;
+    background-color: $base-color;
+    padding: 0 1em;
     @media (min-width:500px) {
         margin: 0 auto;
         padding: 2em;
@@ -93,5 +97,12 @@ footer{
     text-align: center;
     color: rgba($color: $base-color, $alpha: .9);
     font-size: .9em;
+    
+}
+
+.price{
+    color: $acent-color;
+    font-weight: bold;
+    font-size: 1.2em;
     
 }

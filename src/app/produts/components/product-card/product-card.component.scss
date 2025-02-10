@@ -9,7 +9,7 @@
     display: flex;
     gap: 1em;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     width: 15em;    
     aspect-ratio: 3/4;
@@ -22,10 +22,6 @@
 
     &:hover{
         border-color: $primary-color;
-        .btn{
-            background-color: $acent-color;
-            color: $base-color;
-        }
     }
 
     a{
@@ -47,10 +43,7 @@
         }
     }
 
-    .btn{
-        position: relative;
-        z-index: 10;
-    }
+    
     
 
     &-info{
@@ -77,13 +70,7 @@
                 opacity: .5;          
             }
         }
-        // price
-        p{
-            color: $acent-color;
-            font-weight: bold;
-            font-size: 1.2em;
-            
-        }
+        
     }
 
     img{
@@ -95,6 +82,7 @@
         opacity: 0;
         display: node;
         transition: opacity .4s ease;
+        margin: auto;
 
         &.fadein{
             display: block;
