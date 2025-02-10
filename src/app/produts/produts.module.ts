@@ -4,6 +4,7 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SharedModule } from '../shared/shared.module';
+import { ShoppingCartButtonComponent } from './components/shopping-cart-button/shopping-cart-button.component';
 
 
 
@@ -11,14 +12,16 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ProductsPageComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ShoppingCartButtonComponent
   ],
   imports: [
     CommonModule,
     SharedModule
 ],
   exports: [
-    ProductsPageComponent
+    ProductsPageComponent,
+    ShoppingCartButtonComponent
   ]
 })
 export class ProdutsModule { }
