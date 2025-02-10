@@ -22,7 +22,6 @@ export class ProductCardComponent implements OnInit{
     }
 
     onLoad(){
-        console.log('cargo')
         this.hasLoaded = true
     }
 

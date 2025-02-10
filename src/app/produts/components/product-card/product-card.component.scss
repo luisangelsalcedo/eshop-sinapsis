@@ -2,6 +2,7 @@
 
 
 .product-card{
+    position: relative;
     font-size: 1em;
     border: solid .05em $deco1-color;
     background-color: $base-color;
@@ -26,9 +27,35 @@
             color: $base-color;
         }
     }
+
+    a{
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        text-decoration: none;
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity .15s ease-in-out;
+        background-color: $base-color;
+        &:hover{
+            opacity: .75;
+
+           
+        }
+    }
+
+    .btn{
+        position: relative;
+        z-index: 10;
+    }
     
 
     &-info{
+        position: relative;
+        z-index: 10;
         display: flex;
         align-items: center;
         justify-content: center;

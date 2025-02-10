@@ -1,4 +1,5 @@
 <div class="product-card">
+    
     <img 
         [src]="product?.image" 
         [alt]="product?.title" 
@@ -17,4 +18,5 @@
         <p>${{product?.price}}</p>
     </div>
     <button class="btn btn-block" (click)="addToCart(product)">Agregar</button>
+    <a [routerLink]="[ '/product/', product?.id]">Ver producto</a>
 </div>
