@@ -6,6 +6,7 @@ import { map, } from 'rxjs';
 @Component({
     selector: 'product-list',
     templateUrl: './product-list.component.html',
+    styleUrl: './product-list.component.scss',
     standalone: false
 })
 

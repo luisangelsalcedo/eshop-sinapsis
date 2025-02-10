@@ -1,0 +1,20 @@
+<div class="product-card">
+    <img 
+        [src]="product?.image" 
+        [alt]="product?.title" 
+        width="50" 
+        (load)="onLoad()" 
+        [ngClass]="{fadein: hasLoaded }"
+     />
+    <spiner *ngIf="!hasLoaded" />
+   
+    <div class="product-card-info">
+        
+        <h3>
+            <small>{{product?.category | titlecase}}</small>
+            {{product?.title | titlecase}}
+        </h3>        
+        <p>${{product?.price}}</p>
+    </div>
+    <button class="btn btn-block">Agregar</button>
+</div>
