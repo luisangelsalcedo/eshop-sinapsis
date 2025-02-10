@@ -1,5 +1,6 @@
+import { ProductsService } from '../../services/products.service';
+import { Product } from './../../interfaces/product.interace';
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../../interfaces/product.interace';
 
 @Component({
     selector: 'product-card',
@@ -13,6 +14,8 @@ export class ProductCardComponent implements OnInit{
     @Input()
     public product?:Product;
     public hasLoaded:boolean = false;
+
+    constructor(private productsService:ProductsService){}
     
     ngOnInit(): void {
         if(!this.product) throw new Error('Product property is required');
@@ -21,5 +24,10 @@ export class ProductCardComponent implements OnInit{
     onLoad(){
         console.log('cargo')
         this.hasLoaded = true
+    }
+
+    addToCart(product?:Product){
+        if(!product) return;
+        this.productsService.addToShoppingCart(product);
     }
 }

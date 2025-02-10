@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
     private apiUrl:string = 'https://fakestoreapi.com/products';
+    public cart:Product[] = [];
 
     constructor(private http: HttpClient) { }
 
@@ -15,10 +16,17 @@ export class ProductsService {
         return this.http.get<Product[]>(this.apiUrl)
     }
 
-
     getAllCategories(): Observable<Category[]> {
         const url = `${this.apiUrl}/categories`
         return this.http.get<Category[]>(url)
+    }
+
+    addToShoppingCart(product:Product){
+        this.cart.push(product);
+    }
+
+    removeToShoppingCart(product:Product){
+         this.cart = this.cart.filter(({id}) => id != product.id);
     }
     
 }
